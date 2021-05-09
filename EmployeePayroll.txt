@@ -1,1 +1,32 @@
-Welcome to Employee Payroll Database using Mysql
+//UC1
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| payroll_service    |
+| performance_schema |
+| pets               |
+| sys                |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> DROP DATABASE pets;
+Query OK, 0 rows affected (0.12 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| payroll_service    |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> use payroll_service
+Database changed
