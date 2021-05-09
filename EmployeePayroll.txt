@@ -222,4 +222,41 @@ mysql> describe employee_payroll;
 +-------------+------------------+------+-----+---------+----------------+
 8 rows in set (0.00 sec)
 
+//UC9
+
+mysql> ALTER TABLE employee_payroll ADD deduction Double NOT NULL AFTER salary;
+Query OK, 0 rows affected (0.56 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE employee_payroll ADD taxable_pay Double NOT NULL AFTER deduct
+ion;
+Query OK, 0 rows affected (0.52 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE employee_payroll ADD tax Double NOT NULL AFTER taxable_pay;
+Query OK, 0 rows affected (0.57 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE employee_payroll ADD net_pay Double NOT NULL AFTER tax;
+Query OK, 0 rows affected (0.66 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> describe employee_payroll;
++-------------+------------------+------+-----+---------+----------------+
+| Field       | Type             | Null | Key | Default | Extra          |
++-------------+------------------+------+-----+---------+----------------+
+| id          | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| name        | varchar(150)     | NO   |     | NULL    |                |
+| hone_Number | varchar(250)     | YES  |     | NULL    |                |
+| address     | varchar(250)     | YES  |     | TBD     |                |
+| department  | varchar(150)     | YES  |     | NULL    |                |
+| gender      | char(1)          | YES  |     | NULL    |                |
+| salary      | double           | NO   |     | NULL    |                |
+| deduction   | double           | NO   |     | NULL    |                |
+| taxable_pay | double           | NO   |     | NULL    |                |
+| tax         | double           | NO   |     | NULL    |                |
+| net_pay     | double           | NO   |     | NULL    |                |
+| start       | date             | NO   |     | NULL    |                |
++-------------+------------------+------+-----+---------+----------------+
+
 
